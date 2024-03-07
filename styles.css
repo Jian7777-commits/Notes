@@ -1,15 +1,112 @@
 *{
     margin : 0;
     padding : 0;
-    font-family: 'Poppins' , sans-serif;
+    font-family: 'Dosis' , sans-serif;
     box-sizing: border-box;
+}
+
+body{
+    background-color: linear-gradient(135deg, #8554b3, #4f7abb);
+    /* background-color: black; */
+    background-image: url('data:image/svg+xml,%3Csvg width="52" height="26" viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.4"%3E%3Cpath d="M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z" /%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
 }
 
 .container{
     min-height: 100vh;
-    background-color: linear-gradient(135deg, #cf9aff, #95c0ff);
-    background-image: url('data:image/svg+xml,%3Csvg width="52" height="26" viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.4"%3E%3Cpath d="M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z" /%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
-    color: #fff;
-    padding-top: 4%;
-    padding-left: 10%
+    color: rgb(107, 92, 196);
+    padding: 4% 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container h1{
+    font-weight: 800;
+    font-size: 3rem;
+    font-stretch: extra-expanded;
+    align-items: center;
+}
+
+.container h1 img{
+    max-width: 48px;
+}
+
+.container .notes-container{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.container .notes-container .notes{
+    position: relative;
+    width: fit-content;
+    background-color: #fff;
+    padding: 20px 20px 50px 20px;
+    margin: 1rem;
+    margin-right: 2rem;
+    color: #000;
+    border: 2px #000 solid;
+    border-radius: 5px;
+}
+
+.container .notes-container .notes .input-box{
+    border-style: none;
+    outline: none;
+    min-width: 250px;
+    max-width: 325px;
+    min-height: 100px;
+    max-height: 300px;
+    flex-wrap: nowrap;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow: scroll;
+    word-wrap: break-word; 
+}
+
+.container .notes-container .notes img{
+    max-width: 32px;
+}
+
+.current-edit{
+    background-color: rgb(248, 248, 116) !important;
+    border-radius: 100% !important;
+}
+
+.edit-notes{
+    stroke: none;
+    border: none;
+    background: none;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    padding: 5px;
+    background-color: none;
+    border: none;
+    border-radius: none;
+    cursor: pointer;
+}
+
+.container .notes-container p::-webkit-scrollbar {
+    display: none;
+  }
+
+.container .clickables{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+
+.container .clickables .add-notes{
+    width: 150px;
+    height: 30px;
+    font-size: 16px;
+}
+
+.container .clickables .delete-notes{
+    margin: 5px;
+    padding: 5px;
+    max-width: 48px;
+    bottom: 15px;
+    right: 15px;
+    cursor: pointer;
+    color: red;
 }

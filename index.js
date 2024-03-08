@@ -11,7 +11,11 @@ createBtn.click(function (e) {
 // removes edit button highlight when clicking on the page
 $(document).on('click', function(e) {
     if (!$(e.target).closest('.notes').length) {
-        $('.edit-notes').removeClass('current-edit');
+        $('.current-edit').children('.input-box').attr({
+            'contenteditable' : false ,
+            'draggable' : true
+        })
+        $(".notes").removeClass('current-edit')
     }
 });
 
@@ -24,17 +28,24 @@ $('.notes-container').on('click', '.edit-notes',function (e) {
     console.log($(this).hasClass('current-edit'))
 
     if ($('.current-edit').length === 0){
-        $(this).toggleClass('current-edit')
+        $(this).parent().toggleClass('current-edit')
         $(this).siblings('.input-box').attr({
             'contenteditable' : !isEditable ,
             'draggable' : isDraggable});
     }
     else{
-        $(this).parent().siblings('.notes').children('.current-edit').toggleClass('current-edit')
-        $(this).toggleClass('current-edit')
-        $('.current-edit').siblings('.input-box').attr({
+        // current edit contentediatble = !
+        if(!$(this).parent().hasClass('current-edit')){
+            $('.current-edit').children('.input-box').attr({
+                'contenteditable' : false ,
+                'draggable' : true
+            })
+        }
+        $(this).siblings('.input-box').attr({
             'contenteditable' : !isEditable ,
             'draggable' : isDraggable});
+        $(this).parent().siblings('.current-edit').toggleClass('current-edit')
+        $(this).parent().toggleClass('current-edit')
     }
 })
 
